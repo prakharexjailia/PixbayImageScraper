@@ -8,17 +8,17 @@ from urllib2 import Request,urlopen
 from urllib2 import URLError, HTTPError
 k=0
 
-numberOfJsonFiles = 11
+numberOfJsonFiles = 11  #count number of jsons file in jsons folder downloaded before and put it here
 
 count = 1
 while (count <= numberOfJsonFiles):
 	with open('Jsons/data'+str(count)+'.json') as data_file:    
 	    data = json.load(data_file)
 	    for hello in data["hits"]:
-	    	lal=hello
-	    	imageuri=lal["largeImageURL"]
+	    	lal=hello 
+	    	imageuri=lal["largeImageURL"]    # this tag image will be downloaded read json file.
 	    	imageuri = imageuri.replace(' ', '')[:-8].upper()
-	    	temp="1280.jpg"
+	    	temp="1280.jpg"       #completeing filename with extension read json files
 	    	imageuri=imageuri+temp
 	    	imageuri=imageuri.lower()
 	    	print(imageuri)
