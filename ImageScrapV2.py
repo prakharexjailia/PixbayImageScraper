@@ -16,9 +16,9 @@ while (count <= numberOfJsonFiles):
 	    data = json.load(data_file)
 	    for hello in data["hits"]:
 	    	lal=hello 
-	    	imageuri=lal["largeImageURL"]    # this tag image will be downloaded read json file.
+	    	imageuri=lal["largeImageURL"]    # this tag image will be downloaded read json file. OPTIONAL
 	    	imageuri = imageuri.replace(' ', '')[:-8].upper()
-	    	temp="1280.jpg"       #completeing filename with extension read json files
+	    	temp="1280.jpg"       #completeing filename with extension read json files. OPTIONAL
 	    	imageuri=imageuri+temp
 	    	imageuri=imageuri.lower()
 	    	print(imageuri)
